@@ -20,6 +20,8 @@ Your Couchbase version should be 7.6.0 or greater (newer versions like 7.6.2 wil
 ## How to Load (from an OnPrem server) into an OnPrem server or Capella
 
 ```bash
+unzip landmark_all.json.zip
+
 cbimport json -c couchbases://${CB_HOSTNAME} \
     -no-ssl-verify \
     -u $CB_USERNAME -p $CB_PASSWORD \
@@ -41,11 +43,17 @@ Confiugre your environment variables
 * CB_PASSWORD
 * CB_HOSTNAME
 
+Unzip the landmark_all.json.zip file
+
+* unzip landmark_all.json.zip
+
 Run the follwoing program 
 
-* python3 load_ts.py
+* ./load_ts.py
 
 ```python3
+#!/usr/bin/env python3
+
 import os
 import json
 from couchbase.cluster import Cluster
